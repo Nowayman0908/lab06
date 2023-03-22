@@ -113,7 +113,7 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
             PigHoldAction action = new PigHoldAction(this);
             game.sendAction(action);
             try {
-                wait(50);
+                Thread.sleep(250);
             }
             catch(Exception e){
 
@@ -123,7 +123,7 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
             PigRollAction action = new PigRollAction(this);
             game.sendAction(action);
             try {
-                wait(50);
+                Thread.sleep(250);
             }
             catch(Exception e){
 
