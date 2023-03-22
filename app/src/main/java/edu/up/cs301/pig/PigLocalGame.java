@@ -18,7 +18,7 @@ import android.util.Log;
  */
 public class PigLocalGame extends LocalGame {
     private PigGameState stateOfGame;
-    private Random ran;
+    private Random ran = new Random();
     /**
      * This ctor creates a new game state
      */
@@ -46,25 +46,28 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected boolean makeMove(GameAction action) {
+        int genNum;
+        genNum = ran.nextInt(6) + 1;
         if(action instanceof PigHoldAction){
             if(stateOfGame.getPlayerTurnID() == 0){
                 stateOfGame.setPlayerZeroScore(stateOfGame.getPlayerZeroScore() + stateOfGame.getRunningTotal());
                 stateOfGame.setRunningTotal(0);
                 stateOfGame.setPlayerTurnID(1);
+                stateOfGame.setCurrDieVal(genNum);
                 return true;
             }
             else{
                 stateOfGame.setPlayerOneScore(stateOfGame.getPlayerOneScore() + stateOfGame.getRunningTotal());
                 stateOfGame.setRunningTotal(0);
                 stateOfGame.setPlayerTurnID(0);
+                stateOfGame.setCurrDieVal(genNum);
                 return true;
             }
         }
         else if(action instanceof PigRollAction){
-            int genNum;
-            genNum = ran.nextInt(6) + 1;
             if(genNum != 1){
                 stateOfGame.setRunningTotal(stateOfGame.getRunningTotal() + genNum);
+                stateOfGame.setCurrDieVal(genNum);
                 return true;
             }
             else{
