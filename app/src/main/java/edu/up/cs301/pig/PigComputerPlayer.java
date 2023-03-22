@@ -36,8 +36,8 @@ public class PigComputerPlayer extends GameComputerPlayer {
         }
         else {
             Random rand = new Random();
-            int turnChoice = rand.nextInt(1);
-            if (turnChoice ==0) {
+            int turnChoice = rand.nextInt(2);
+            if (turnChoice == 0) {
                 PigHoldAction action = new PigHoldAction(this);
                 game.sendAction(action);
             }

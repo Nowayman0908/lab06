@@ -52,14 +52,18 @@ public class PigLocalGame extends LocalGame {
             if(stateOfGame.getPlayerTurnID() == 0){
                 stateOfGame.setPlayerZeroScore(stateOfGame.getPlayerZeroScore() + stateOfGame.getRunningTotal());
                 stateOfGame.setRunningTotal(0);
-                stateOfGame.setPlayerTurnID(1);
+                if(players.length > 1) {
+                    stateOfGame.setPlayerTurnID(1);
+                }
                 stateOfGame.setCurrDieVal(genNum);
                 return true;
             }
             else{
                 stateOfGame.setPlayerOneScore(stateOfGame.getPlayerOneScore() + stateOfGame.getRunningTotal());
                 stateOfGame.setRunningTotal(0);
-                stateOfGame.setPlayerTurnID(0);
+                if(players.length > 1) {
+                    stateOfGame.setPlayerTurnID(0);
+                }
                 stateOfGame.setCurrDieVal(genNum);
                 return true;
             }
@@ -73,11 +77,15 @@ public class PigLocalGame extends LocalGame {
             else{
                 stateOfGame.setRunningTotal(0);
                 if(stateOfGame.getPlayerTurnID() == 1) {
-                    stateOfGame.setPlayerTurnID(0);
+                    if(players.length > 1) {
+                        stateOfGame.setPlayerTurnID(0);
+                    }
                     return true;
                 }
                 else{
-                    stateOfGame.setPlayerTurnID(1);
+                    if(players.length > 1) {
+                        stateOfGame.setPlayerTurnID(1);
+                    }
                     return true;
                 }
             }
