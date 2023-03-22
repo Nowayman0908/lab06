@@ -90,7 +90,8 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected void sendUpdatedStateTo(GamePlayer p) {
-        //TODO  You will implement this method
+        PigGameState copied = new PigGameState(stateOfGame);
+        p.sendInfo(copied);
     }//sendUpdatedSate
 
     /**
@@ -102,7 +103,12 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected String checkIfGameOver() {
-        //TODO  You will implement this method
+        if(stateOfGame.getPlayerOneScore() >= 50){
+            return "Congratulation Player One on winning with " + stateOfGame.getPlayerOneScore() + " points!";
+        }
+        else if(stateOfGame.getPlayerZeroScore() >= 50){
+            return "Congratulation Player Zero on winning with " + stateOfGame.getPlayerZeroScore() + " points!";
+        }
         return null;
     }
 
