@@ -60,7 +60,6 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
      */
     @Override
     public void receiveInfo(GameInfo info) {
-        //TODO You will implement this method to receive state objects from the game
         if(info instanceof PigGameState){
             if(((PigGameState) info).getPlayerTurnID() == 1) {
                 playerScoreTextView.setText(Integer.toString(((PigGameState) info).getPlayerOneScore()));
@@ -109,25 +108,16 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
      */
 
     public void onClick(View button) {
+
         if (!(button instanceof ImageButton)) {
             PigHoldAction action = new PigHoldAction(this);
             game.sendAction(action);
-            try {
-                Thread.sleep(250);
-            }
-            catch(Exception e){
 
-            }
         }
         else {
             PigRollAction action = new PigRollAction(this);
             game.sendAction(action);
-            try {
-                Thread.sleep(250);
-            }
-            catch(Exception e){
 
-            }
         }
     }//onClick
 

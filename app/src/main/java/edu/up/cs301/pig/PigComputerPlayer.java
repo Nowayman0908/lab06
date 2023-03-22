@@ -31,6 +31,12 @@ public class PigComputerPlayer extends GameComputerPlayer {
     @Override
     protected void receiveInfo(GameInfo info) {
         PigGameState gameState = (PigGameState)info;
+        try {
+            Thread.sleep(250);
+        }
+        catch(Exception e){
+
+        }
         if (gameState.getPlayerTurnID() != this.playerNum) {
             return;
         }
