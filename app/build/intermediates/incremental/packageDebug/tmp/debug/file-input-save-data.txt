@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Mon Mar 27 21:43:24 PDT 2023
+0.base=C\:\\Users\\loot1\\OneDrive\\Desktop\\Code Question Mark\\lab06-main\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+0.path=classes.dex
+count=1
+0.baseType=DIRECTORY
+0.set=DEX

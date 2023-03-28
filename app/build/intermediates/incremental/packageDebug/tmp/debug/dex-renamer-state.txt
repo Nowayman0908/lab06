@@ -1,0 +1,4 @@
+#Mon Mar 27 21:43:24 PDT 2023
+base.0=C\:\\Users\\loot1\\OneDrive\\Desktop\\Code Question Mark\\lab06-main\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+renamed.0=classes.dex
+path.0=classes.dex
